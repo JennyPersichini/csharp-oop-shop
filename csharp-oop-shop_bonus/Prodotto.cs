@@ -27,7 +27,7 @@ namespace csharp_oop_shop
         private int CreaProdotto()
         {
             Random NumeroRandom = new Random();
-            return NumeroRandom.Next();
+            return NumeroRandom.Next(100);
         }
 
         public string getNome()
@@ -53,6 +53,18 @@ namespace csharp_oop_shop
         public string getNomeEsteso()
         {
             return Codice.ToString() + " " + Nome;
+        }
+
+        public string padLeft()
+        {
+            string codiceStringa = Codice.ToString();
+
+            for (int i = codiceStringa.Length; i < 8; i++)
+            {
+                codiceStringa = "0" + codiceStringa;
+            }
+
+            return codiceStringa;
         }
     }
 }
